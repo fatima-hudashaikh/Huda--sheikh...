@@ -1,0 +1,80 @@
+ body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      background:url("math-symbols-and-formulas-checkered-footage-250928964_iconl.webp"); 
+     background-repeat: no-repeat;
+     background-size: cover;
+    }
+
+    .calculator {
+      backdrop-filter: blur(14px);
+      background:rgba(20, 20, 30, 0.85);;
+      border-radius: 20px;
+      padding: 25px;
+      width: 320px;
+      box-shadow: 0 10px 25px white;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #inputResult {
+      width: 100%;
+      height: 70px;
+      border: none;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #f1f1f1;
+      font-size: 26px;
+      padding: 10px;
+      margin-bottom: 20px;
+      text-align: right;
+      font-weight: bold;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    button {
+      padding: 18px;
+      border: none;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #e0e0e0;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    button:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: scale(1.08);
+    }
+
+    
+    .equal {
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      color: #fff;
+    }
+
+    .equal:hover {
+      background: linear-gradient(135deg, #0072ff, #00c6ff);
+    }
+
+    .clear {
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      color: #fff;
+    }
+
+    .clear:hover {
+      background: linear-gradient(135deg, #ff4b2b, #ff416c);
+    }
+
+    
