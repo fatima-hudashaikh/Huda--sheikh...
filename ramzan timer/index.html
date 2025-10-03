@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ramadan Countdown</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #5c482b;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #f4f4f5;
+      padding: 25px 40px;
+      border-radius: 10px;
+      border: 1px solid #000000a4;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #444;
+    }
+
+    .timer {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .time-box {
+      background: #f0f0f0;
+      padding: 15px 20px;
+      border-radius: 8px;
+      min-width: 70px;
+    }
+
+    .time-box span {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #222;
+    }
+
+    .time-box small {
+      font-size: 0.85rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌙 Countdown to Ramzan 2026 🌙</h1>
+    <div class="timer">
+      <div class="time-box">
+        <span id="months">0</span>
+        <small>Months</small>
+      </div>
+      <div class="time-box">
+        <span id="days">0</span>
+        <small>Days</small>
+      </div>
+      <div class="time-box">
+        <span id="hours">0</span>
+        <small>Hours</small>
+      </div>
+      <div class="time-box">
+        <span id="minutes">0</span>
+        <small>Minutes</small>
+      </div>
+      <div class="time-box">
+        <span id="seconds">0</span>
+        <small>Seconds</small>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const ramzanStart = new Date("February 17, 2026 00:00:00").getTime();
+
+    function updateCountdown() {
+      var now = new Date().getTime();
+      var distance = ramzanStart - now;
+
+      if (distance < 0) {
+        document.querySelector(".timer").innerHTML = "<h2>🌙 Ramzan Mubarak! 🌙</h2>";
+        return;
+      }
+
+      const months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
+      const days = Math.floor((distance % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("months").innerText = months;
+      document.getElementById("days").innerText = days;
+      document.getElementById("hours").innerText = hours;
+      document.getElementById("minutes").innerText = minutes;
+      document.getElementById("seconds").innerText = seconds;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
